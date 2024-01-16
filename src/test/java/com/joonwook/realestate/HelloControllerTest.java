@@ -1,6 +1,6 @@
 package com.joonwook.realestate;
 
-import com.joonwook.realestate.controller.testController;
+import com.joonwook.realestate.controller.AptInfoController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(controllers = testController.class)
+@WebMvcTest(controllers = AptInfoController.class)
 public class HelloControllerTest {
 
     @Autowired

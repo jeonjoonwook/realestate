@@ -2,11 +2,24 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.joonwook.realestate.Mapper.TestMapper">
-    <select id="test" resultType="com.joonwook.realestate.dto.Test">
-        select apt_id,
-               apt_nm
-        from apt
+<mapper namespace="com.joonwook.realestate.Mapper.AptInfoMapper">
+    <select id="selectAptInfo" resultType="com.joonwook.realestate.domain.Apartment">
+        SELECT
+                APT_ID,
+                HIST_STRT_DTS,
+                HIST_END_DTS,
+                APT_NM,
+                RGN_CD,
+                RGN_DTL_CD,
+                ADDRESS,
+                APT_YEAR,
+                UNIT_AMT,
+                PLOT_RATE,
+                REG_DTS,
+                REGPE_ID,
+                MOD_DTS,
+                MODPE_ID
+        FROM APT
     </select>
 
 </mapper>
