@@ -14,7 +14,7 @@ public class AptInfoController {
     @Autowired
     AptInfoService aptInfoService;
 
-    @GetMapping("/APT")
+    @GetMapping("/apt")
     public String getAptInfo(Model model) {
 
         model.addAttribute("apartments",aptInfoService.getAptInfo());
