@@ -30,9 +30,9 @@
                 #{unitAmt},
                 #{plotRate},
                 NOW(),
-                '전준욱',
+                'joonwook',
                 NOW(),
-                '전준욱'
+                'joonwook'
             )
         ]]>
     </insert>

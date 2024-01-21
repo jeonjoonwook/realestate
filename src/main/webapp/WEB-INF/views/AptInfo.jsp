@@ -1,6 +1,6 @@
 <%@ page import="java.util.Calendar" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -8,8 +8,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>아파트 기본정보 조회</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/js/AptInfo.js"></script>
 </head>
 <body>
+    <h2>아파트 기본정보 조회</h2>
+    <input type="button" id="btnRtvApt" value="조회">
     <table border="1">
         <th>아파트ID</th>
         <th>이력시작일시</th>
@@ -47,8 +51,3 @@
 </body>
 </html>
 
-<script>
-    $(document).ready(function(){
-
-    });
-</script>

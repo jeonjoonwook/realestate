@@ -8,32 +8,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>아파트 기본정보 저장</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/js/AptReg.js"></script>
 </head>
 <body>
     <h2>아파트 기본정보 저장</h2>
-    <form action="/save/apt" method="post">
-        <label for="aptNm">Apartment Name:</label>
+
+    <div id="regAptForm">
+        <label for="aptNm">아파트명:</label>
         <input type="text" id="aptNm" name="aptNm" required><br>
 
-        <label for="rgnCd">Region Code:</label>
+        <label for="rgnCd">지역코드:</label>
         <input type="text" id="rgnCd" name="rgnCd" required><br>
 
-        <label for="rgnDtlCd">Region Detail Code:</label>
+        <label for="rgnDtlCd">지역상세코드:</label>
         <input type="text" id="rgnDtlCd" name="rgnDtlCd" required><br>
 
-        <label for="address">Address:</label>
+        <label for="address">주소:</label>
         <input type="text" id="address" name="address" required><br>
 
-        <label for="aptYear">Year of Construction:</label>
+        <label for="aptYear">연식:</label>
         <input type="number" id="aptYear" name="aptYear" required><br>
 
-        <label for="unitAmt">Unit Amount:</label>
+        <label for="unitAmt">세대수:</label>
         <input type="text" id="unitAmt" name="unitAmt" required><br>
 
-        <label for="plotRate">Plot Rate:</label>
+        <label for="plotRate">용적률:</label>
         <input type="text" id="plotRate" name="plotRate" required><br>
 
-        <input type="submit" value="Save">
-    </form>
+        <input type="button" id="btnRegApt" value="저장">
+    </div>
 </body>
 </html>

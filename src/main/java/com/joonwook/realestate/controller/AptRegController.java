@@ -7,6 +7,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 public class AptRegController {
@@ -20,8 +25,22 @@ public class AptRegController {
         return "AptReg"; }
 
     @PostMapping("/save/apt")
-    public String saveApt(AptRegDto aptRegDto) {
-        aptRegService.insertApt(aptRegDto);
-        return "redirect:/apt"; // 성공 페이지로 리다이렉션
+    public @ResponseBody Map<String,String> saveApt(@RequestBody AptRegDto aptRegDto) {
+        Map<String, String> response = new HashMap<>();
+        response.put("status", "success");
+        response.put("message", "Apt saved successfully.");
+
+        try{
+            aptRegService.insertApt(aptRegDto);
+            response.put("status", "success");
+            response.put("message", "Apt saved successfully.");
+        }catch(Exception e){
+            System.out.println("saveApt error");
+            // 예외가 발생한 경우, 실패 상태를 response에 추가
+            response.put("status", "error");
+            response.put("message", "Failed to save Apt. " + e.getMessage());
+        }
+
+        return response;
     }
 }

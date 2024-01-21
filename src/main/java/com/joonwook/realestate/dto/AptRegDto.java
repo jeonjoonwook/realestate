@@ -18,20 +18,7 @@ public class AptRegDto {
     private Date modDts;
     private String modpeId;
 
-    public AptRegDto(Date histStrtDts, Date histEndDts, String aptNm, String rgnCd, String rgnDtlCd, String address, int aptYear, String unitAmt, String plotRate, Date regDts, String regpeId, Date modDts, String modpeId) {
-        this.histStrtDts = histStrtDts;
-        this.histEndDts = histEndDts;
-        this.aptNm = aptNm;
-        this.rgnCd = rgnCd;
-        this.rgnDtlCd = rgnDtlCd;
-        this.address = address;
-        this.aptYear = aptYear;
-        this.unitAmt = unitAmt;
-        this.plotRate = plotRate;
-        this.regDts = regDts;
-        this.regpeId = regpeId;
-        this.modDts = modDts;
-        this.modpeId = modpeId;
+    public AptRegDto() {
     }
 
     public Date getHistStrtDts() {

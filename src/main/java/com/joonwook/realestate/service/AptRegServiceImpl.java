@@ -15,15 +15,10 @@ public class AptRegServiceImpl implements AptRegService {
 
     @Override
     public void insertApt(AptRegDto aptRegDto) {
-        Date currentDate = new Date();
-
-
-        aptRegDto.setHistEndDts(currentDate);
-        aptRegDto.setHistStrtDts(currentDate);
-        aptRegDto.setRegDts(currentDate);
-        aptRegDto.setRegpeId("joonwook");
-        aptRegDto.setModpeId("joonwook");
-        aptRegDto.setModDts(currentDate);
-        aptRegMapper.insertApt(aptRegDto);
+        try{
+            aptRegMapper.insertApt(aptRegDto);
+        }catch(Exception e){
+            System.out.println("insertApt fail : "+e.getMessage());
+        }
     }
 }
