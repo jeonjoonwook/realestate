@@ -2,39 +2,37 @@ package com.joonwook.realestate.domain;
 
 import java.util.Date;
 
+public class Region {
 
-public class Apartment {
     private int aptId;
     private Date histStrtDts;
     private Date histEndDts;
-    private String aptNm;
     private String rgnCd;
+    private String rgnNm;
     private String rgnDtlCd;
-    private String address;
-    private int aptYear;
-    private String unitAmt;
-    private String plotRate;
+    private String rgnDtlNm;
+    private String description;
     private Date regDts;
     private String regpeId;
     private Date modDts;
-
     private String modpeId;
 
-    public Apartment(int aptId, Date histStrtDts, Date histEndDts, String aptNm, String rgnCd, String rgnDtlCd, String address, int aptYear, String unitAmt, String plotRate, Date regDts, String regpeId, Date modDts, String modpeId) {
+    public Region(int aptId, Date histStrtDts, Date histEndDts, String rgnCd, String rgnNm, String rgnDtlCd, String rgnDtlNm, String description, Date regDts, String regpeId, Date modDts, String modpeId) {
         this.aptId = aptId;
         this.histStrtDts = histStrtDts;
         this.histEndDts = histEndDts;
-        this.aptNm = aptNm;
         this.rgnCd = rgnCd;
+        this.rgnNm = rgnNm;
         this.rgnDtlCd = rgnDtlCd;
-        this.address = address;
-        this.aptYear = aptYear;
-        this.unitAmt = unitAmt;
-        this.plotRate = plotRate;
+        this.rgnDtlNm = rgnDtlNm;
+        this.description = description;
         this.regDts = regDts;
         this.regpeId = regpeId;
         this.modDts = modDts;
         this.modpeId = modpeId;
+    }
+
+    public Region() {
     }
 
     public int getAptId() {
@@ -61,20 +59,20 @@ public class Apartment {
         this.histEndDts = histEndDts;
     }
 
-    public String getAptNm() {
-        return aptNm;
-    }
-
-    public void setAptNm(String aptNm) {
-        this.aptNm = aptNm;
-    }
-
     public String getRgnCd() {
         return rgnCd;
     }
 
     public void setRgnCd(String rgnCd) {
         this.rgnCd = rgnCd;
+    }
+
+    public String getRgnNm() {
+        return rgnNm;
+    }
+
+    public void setRgnNm(String rgnNm) {
+        this.rgnNm = rgnNm;
     }
 
     public String getRgnDtlCd() {
@@ -85,36 +83,20 @@ public class Apartment {
         this.rgnDtlCd = rgnDtlCd;
     }
 
-    public String getAddress() {
-        return address;
+    public String getRgnDtlNm() {
+        return rgnDtlNm;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setRgnDtlNm(String rgnDtlNm) {
+        this.rgnDtlNm = rgnDtlNm;
     }
 
-    public int getAptYear() {
-        return aptYear;
+    public String getDescription() {
+        return description;
     }
 
-    public void setAptYear(int aptYear) {
-        this.aptYear = aptYear;
-    }
-
-    public String getUnitAmt() {
-        return unitAmt;
-    }
-
-    public void setUnitAmt(String unitAmt) {
-        this.unitAmt = unitAmt;
-    }
-
-    public String getPlotRate() {
-        return plotRate;
-    }
-
-    public void setPlotRate(String plotRate) {
-        this.plotRate = plotRate;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Date getRegDts() {
@@ -148,8 +130,5 @@ public class Apartment {
     public void setModpeId(String modpeId) {
         this.modpeId = modpeId;
     }
-
-
-
 
 }

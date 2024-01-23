@@ -1,6 +1,8 @@
 package com.joonwook.realestate.controller;
 
+import com.joonwook.realestate.domain.Region;
 import com.joonwook.realestate.dto.AptRegDto;
+import com.joonwook.realestate.service.AptInfoService;
 import com.joonwook.realestate.service.AptRegService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,17 +13,20 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
 public class AptRegController {
-
+    @Autowired
+    AptInfoService aptInfoService;
     @Autowired
     AptRegService aptRegService;
 
     @GetMapping("/reg/apt")
     public String getAptInfo(Model model) {
-
+        List<Region> regions = aptInfoService.getRegionInfo();
+        model.addAttribute("regions",regions);
         return "AptReg"; }
 
     @PostMapping("/save/apt")

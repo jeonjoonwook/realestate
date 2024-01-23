@@ -5,21 +5,38 @@
 <mapper namespace="com.joonwook.realestate.Mapper.AptInfoMapper">
     <select id="selectAptInfo" resultType="com.joonwook.realestate.domain.Apartment">
         SELECT
-                APT_ID,
-                HIST_STRT_DTS,
-                HIST_END_DTS,
-                APT_NM,
-                RGN_CD,
-                RGN_DTL_CD,
-                ADDRESS,
-                APT_YEAR,
-                UNIT_AMT,
-                PLOT_RATE,
-                REG_DTS,
-                REGPE_ID,
-                MOD_DTS,
-                MODPE_ID
+                APT_ID as aptId,
+                HIST_STRT_DTS as histStrtDts,
+                HIST_END_DTS as histEndDts,
+                APT_NM as aptNm,
+                RGN_CD as rgnCd,
+                RGN_DTL_CD as rgnDtlCd,
+                ADDRESS as address,
+                APT_YEAR as aptYear,
+                UNIT_AMT as unitAmt,
+                PLOT_RATE as plotRate,
+                REG_DTS as regDts,
+                REGPE_ID as regpeId,
+                MOD_DTS as modDts,
+                MODPE_ID as modpeId
         FROM APT
+    </select>
+
+    <select id="selectRegionInfo" resultType="com.joonwook.realestate.domain.Region">
+        SELECT
+            RGN_CD as rgnCd,
+            RGN_NM as rgnNm
+        FROM REGION
+        GROUP BY RGN_CD, RGN_NM
+    </select>
+
+    <select id="selectRegionDetailInfo" parameterType="String" resultType="com.joonwook.realestate.domain.Region">
+        SELECT
+        RGN_DTL_CD as rgnDtlCd,
+        RGN_DTL_NM as rgnDtlNm
+        FROM REGION
+        WHERE 1=1
+        AND RGN_CD = #{rgnCd}
     </select>
 
 </mapper>

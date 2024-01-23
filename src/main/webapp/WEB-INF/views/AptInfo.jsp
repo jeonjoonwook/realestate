@@ -13,40 +13,29 @@
 </head>
 <body>
     <h2>아파트 기본정보 조회</h2>
-    <input type="button" id="btnRtvApt" value="조회">
-    <table border="1">
-        <th>아파트ID</th>
-        <th>이력시작일시</th>
-        <th>이력종료일시</th>
-        <th>아파트명</th>
-        <th>지역코드</th>
-        <th>지역상세코드</th>
-        <th>주소</th>
-        <th>연식</th>
-        <th>세대수</th>
-        <th>용적률</th>
-        <th>등록일시</th>
-        <th>등록자</th>
-        <th>수정일시</th>
-        <th>수정자</th>
-        <c:forEach var="apartment" items="${apartments}" varStatus="status">
-            <tr>
-                <td>${apartment.aptId}</td>
-                <td>${apartment.histStrtDts}</td>
-                <td>${apartment.histEndDts}</td>
-                <td>${apartment.aptNm}</td>
-                <td>${apartment.rgnCd}</td>
-                <td>${apartment.rgnDtlCd}</td>
-                <td>${apartment.address}</td>
-                <td>${apartment.aptYear}</td>
-                <td>${apartment.unitAmt}</td>
-                <td>${apartment.plotRate}</td>
-                <td>${apartment.regDts}</td>
-                <td>${apartment.regpeId}</td>
-                <td>${apartment.modDts}</td>
-                <td>${apartment.modpeId}</td>
-            </tr>
+    <label for="rgnCd">지역코드:</label>
+    <select id="rgnCd">
+        <c:forEach var="region" items="${regions}">
+            <option value="${region.rgnCd}">${region.rgnNm}</option>
         </c:forEach>
+    </select>
+    <select id="rgnDtlCd"></select>
+    <input type="button" id="btnRtvApt" value="조회">
+    <input type="button" id="btnMoveRegApt" onClick="location.href='/reg/apt'" value="저장화면이동">
+    <table border="1" id = "tbApt">
+        <thead>
+            <th>아파트ID</th>
+            <th>아파트명</th>
+            <th>지역코드</th>
+            <th>지역상세코드</th>
+            <th>주소</th>
+            <th>연식</th>
+            <th>세대수</th>
+            <th>용적률</th>
+        </thead>
+        <tbody>
+
+        </tbody>
     </table>
 </body>
 </html>

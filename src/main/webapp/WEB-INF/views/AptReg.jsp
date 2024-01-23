@@ -19,16 +19,19 @@
         <input type="text" id="aptNm" name="aptNm" required><br>
 
         <label for="rgnCd">지역코드:</label>
-        <input type="text" id="rgnCd" name="rgnCd" required><br>
-
+        <select id="rgnCd">
+            <c:forEach var="region" items="${regions}">
+                <option value="${region.rgnCd}">${region.rgnNm}</option>
+            </c:forEach>
+        </select><br>
         <label for="rgnDtlCd">지역상세코드:</label>
-        <input type="text" id="rgnDtlCd" name="rgnDtlCd" required><br>
+        <select id="rgnDtlCd"></select><br>
 
         <label for="address">주소:</label>
         <input type="text" id="address" name="address" required><br>
 
         <label for="aptYear">연식:</label>
-        <input type="number" id="aptYear" name="aptYear" required><br>
+        <input type="text" id="aptYear" name="aptYear" required><br>
 
         <label for="unitAmt">세대수:</label>
         <input type="text" id="unitAmt" name="unitAmt" required><br>
@@ -37,6 +40,7 @@
         <input type="text" id="plotRate" name="plotRate" required><br>
 
         <input type="button" id="btnRegApt" value="저장">
+        <input type="button" id="btnMoveRtvApt" onClick="location.href='/apt'" value="조회화면이동">
     </div>
 </body>
 </html>
