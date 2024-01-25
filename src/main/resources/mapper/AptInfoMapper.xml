@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.joonwook.realestate.Mapper.AptInfoMapper">
-    <select id="selectAptInfo" resultType="com.joonwook.realestate.domain.Apartment">
+    <select id="selectAptInfo" parameterType="com.joonwook.realestate.dto.AptInfoDto" resultType="com.joonwook.realestate.domain.Apartment">
         SELECT
                 APT_ID as aptId,
                 HIST_STRT_DTS as histStrtDts,
@@ -20,6 +20,9 @@
                 MOD_DTS as modDts,
                 MODPE_ID as modpeId
         FROM APT
+        WHERE 1=1
+        AND (#{rgnCd} IS NULL OR RGN_CD = #{rgnCd})
+        AND (#{rgnDtlCd} IS NULL OR RGN_DTL_CD = #{rgnDtlCd} OR #{rgnDtlCd} = '')
     </select>
 
     <select id="selectRegionInfo" resultType="com.joonwook.realestate.domain.Region">

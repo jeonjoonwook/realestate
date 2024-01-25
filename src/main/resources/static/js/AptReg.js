@@ -53,7 +53,7 @@ $(document).ready(function(){
 
                 // 기존 옵션 제거
                 rgnDtlCdSel.empty();
-
+                rgnDtlCdSel.append('<option value="">==선택==</option>');
                 // 새로운 옵션 추가
                 $.each(data, function(index, item) {
                     rgnDtlCdSel.append('<option value="' + item.rgnDtlCd + '">' + item.rgnDtlNm + '</option>');

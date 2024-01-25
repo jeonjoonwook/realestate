@@ -3,6 +3,7 @@ package com.joonwook.realestate.service;
 import com.joonwook.realestate.Mapper.AptInfoMapper;
 import com.joonwook.realestate.domain.Apartment;
 import com.joonwook.realestate.domain.Region;
+import com.joonwook.realestate.dto.AptInfoDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,8 +16,8 @@ public class AptInfoServiceImpl implements AptInfoService {
     AptInfoMapper aptInfoMapper;
 
     @Override
-    public List<Apartment> getAptInfo(){
-        return aptInfoMapper.selectAptInfo();
+    public List<Apartment> getAptInfo(AptInfoDto aptInfoDto){
+        return aptInfoMapper.selectAptInfo(aptInfoDto);
     }
 
     @Override

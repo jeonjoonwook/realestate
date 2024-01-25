@@ -1,8 +1,12 @@
 $(document).ready(function(){
 
     $("#btnRtvApt").click(function () {
+         var rgnCd = $("#rgnCd").val();
+         var rgnDtlCd = $("#rgnDtlCd").val();
 
          var data = {
+            "rgnCd" : rgnCd,
+            "rgnDtlCd" : rgnDtlCd
          };
 
          $.ajax({
@@ -54,7 +58,7 @@ $(document).ready(function(){
 
                 // 기존 옵션 제거
                 rgnDtlCdSel.empty();
-
+                rgnDtlCdSel.append('<option value="">전체</option>');
                 // 새로운 옵션 추가
                 $.each(data, function(index, item) {
                     rgnDtlCdSel.append('<option value="' + item.rgnDtlCd + '">' + item.rgnDtlNm + '</option>');

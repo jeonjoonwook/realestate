@@ -24,9 +24,7 @@ public class AptInfoController {
 
     @PostMapping("/info/apt")
     public @ResponseBody List<Apartment> rtvAptInfo(@RequestBody AptInfoDto aptInfoDto) {
-
-        List<Apartment> aptList =  aptInfoService.getAptInfo();
-
+        List<Apartment> aptList =  aptInfoService.getAptInfo(aptInfoDto);
         return aptList; }
 
     @GetMapping("/region/detail")
