@@ -36,4 +36,42 @@
             )
         ]]>
     </insert>
+
+    <insert id="insertAptDtl" parameterType="com.joonwook.realestate.dto.AptDtlRegDto" >
+        <![CDATA[
+            INSERT INTO APT_DTL (
+                HIST_STRT_DTS,
+                HIST_END_DTS,
+                APT_ID,
+                TOT_AREA,
+                USBL_AREA,
+                ROOM_AMT,
+                TOILET_AMT,
+                HIGH_SELL_PRC,
+                HIGH_SELL_DT,
+                HIGH_RENT_PRC,
+                HIGH_RENT_DT,
+                REG_DTS,
+                REGPE_ID,
+                MOD_DTS,
+                MODPE_ID
+            ) VALUES (
+                NOW(),
+                '9999-12-31 23:59:59',
+                #{aptId},
+                #{totArea},
+                #{usblArea},
+                #{roomAmt},
+                #{toiletAmt},
+                #{highSellPrc},
+                #{highSellDt},
+                #{highRentPrc},
+                #{highRentDt},
+                NOW(),
+                'joonwook',
+                NOW(),
+                'joonwook'
+            )
+        ]]>
+    </insert>
 </mapper>

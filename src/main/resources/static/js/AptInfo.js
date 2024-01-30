@@ -24,7 +24,7 @@ $(document).ready(function(){
                  for (var i = 0; i < response.length; i++) {
                      var apartment = response[i];
                      var row = '<tr>' +
-                         '<td>' + apartment.aptId + '</td>' +
+                         '<td><a href="/reg/apt/dtl?aptId=' + apartment.aptId + '">' + apartment.aptId + '</a></td>' +
                          '<td>' + apartment.aptNm + '</td>' +
                          '<td>' + apartment.rgnCd + '</td>' +
                          '<td>' + apartment.rgnDtlCd + '</td>' +

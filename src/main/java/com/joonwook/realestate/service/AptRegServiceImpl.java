@@ -1,6 +1,7 @@
 package com.joonwook.realestate.service;
 
 import com.joonwook.realestate.Mapper.AptRegMapper;
+import com.joonwook.realestate.dto.AptDtlRegDto;
 import com.joonwook.realestate.dto.AptRegDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,15 @@ public class AptRegServiceImpl implements AptRegService {
             aptRegMapper.insertApt(aptRegDto);
         }catch(Exception e){
             System.out.println("insertApt fail : "+e.getMessage());
+        }
+    }
+
+    @Override
+    public void insertAptDtl(AptDtlRegDto aptDtlRegDto) {
+        try{
+            aptRegMapper.insertAptDtl(aptDtlRegDto);
+        }catch(Exception e){
+            System.out.println("insertAptDtl fail : "+e.getMessage());
         }
     }
 }
