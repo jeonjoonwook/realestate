@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    $("#btnRtvApt").click(function () {
+    $("#btnRtvAptDtl").click(function () {
          var rgnCd = $("#rgnCd").val();
          var rgnDtlCd = $("#rgnDtlCd").val();
 
@@ -11,31 +11,35 @@ $(document).ready(function(){
 
          $.ajax({
              type: "POST",
-             url: "/info/apt",
+             url: "/info/apt/dtl",
              contentType: "application/json",
              data: JSON.stringify(data),
              dataType : "json",
              success: function (response) {
 
                  // 성공 시 처리
-                 $('#tbApt tbody').empty();
+                 $('#tbAptDtl tbody').empty();
 
                  // Loop through the retrieved data and append rows to the table
                  for (var i = 0; i < response.length; i++) {
                      var apartment = response[i];
                      var row = '<tr>' +
                          '<td>' + apartment.aptId + '</td>' +
+                         '<td>' + apartment.aptDtlId + '</td>' +
                          '<td>' + apartment.aptNm + '</td>' +
-                         '<td>' + apartment.rgnCd + '</td>' +
                          '<td>' + apartment.rgnDtlCd + '</td>' +
                          '<td>' + apartment.address + '</td>' +
                          '<td>' + apartment.aptYear + '</td>' +
                          '<td>' + apartment.unitAmt + '</td>' +
                          '<td>' + apartment.plotRate + '</td>' +
-                         '<td><a href="/reg/apt/dtl?aptId=' + apartment.aptId + '">아파트상세저장</a></td>' +
+                         '<td>' + apartment.totArea + '/'+apartment.usblArea+'</td>' +
+                         '<td>' + apartment.roomAmt + '/'+apartment.toiletAmt+'</td>' +
+                         '<td>' + apartment.highSellPrc + '('+apartment.highSellDt+')</td>' +
+                         '<td>' + apartment.highRentPrc + '('+apartment.highRentDt+')</td>' +
+                         '<td><a href="/reg/apt/dtl/prc?aptId=' + apartment.aptDtlId + '">아파트가격저장</a></td>' +
                          '</tr>';
 
-                     $('#tbApt tbody').append(row);
+                     $('#tbAptDtl tbody').append(row);
                  }
              },
              error: function (error) {

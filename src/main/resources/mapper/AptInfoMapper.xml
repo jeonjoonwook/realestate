@@ -25,6 +25,34 @@
         AND (#{rgnDtlCd} IS NULL OR RGN_DTL_CD = #{rgnDtlCd} OR #{rgnDtlCd} = '')
     </select>
 
+    <select id="selectAptDtlInfo" parameterType="com.joonwook.realestate.dto.AptDtlInfoDto" resultType="com.joonwook.realestate.dto.AptDtlInfoDto">
+        SELECT
+            A.APT_ID as aptId,
+            AD.APT_DTL_ID as aptDtlId,
+            A.APT_NM as aptNm,
+            A.RGN_CD as rgnCd,
+            A.RGN_DTL_CD as rgnDtlCd,
+            A.ADDRESS as address,
+            A.APT_YEAR as aptYear,
+            A.UNIT_AMT as unitAmt,
+            A.PLOT_RATE as plotRate,
+            AD.TOT_AREA as totArea,
+            AD.USBL_AREA as usblArea,
+            AD.ROOM_AMT as roomAmt,
+            AD.TOILET_AMT as toiletAmt,
+            AD.HIGH_SELL_PRC as highSellPrc,
+            AD.HIGH_SELL_DT as highSellDt,
+            AD.HIGH_RENT_PRC as highRentPrc,
+            AD.HIGH_RENT_DT as highRentDt
+        FROM APT A , APT_DTL AD
+        WHERE 1=1
+        AND A.APT_ID = AD.APT_ID
+        AND A.HIST_END_DTS = '9999-12-31 23:59:59'
+        AND AD.HIST_END_DTS = '9999-12-31 23:59:59'
+        AND (#{rgnCd} IS NULL OR RGN_CD = #{rgnCd})
+        AND (#{rgnDtlCd} IS NULL OR RGN_DTL_CD = #{rgnDtlCd} OR #{rgnDtlCd} = '')
+    </select>
+
     <select id="selectRegionInfo" resultType="com.joonwook.realestate.domain.Region">
         SELECT
             RGN_CD as rgnCd,
