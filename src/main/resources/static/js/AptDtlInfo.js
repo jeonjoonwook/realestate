@@ -36,7 +36,11 @@ $(document).ready(function(){
                          '<td>' + apartment.roomAmt + '/'+apartment.toiletAmt+'</td>' +
                          '<td>' + apartment.highSellPrc + '('+apartment.highSellDt+')</td>' +
                          '<td>' + apartment.highRentPrc + '('+apartment.highRentDt+')</td>' +
-                         '<td><a href="/reg/apt/dtl/prc?aptId=' + apartment.aptDtlId + '">아파트가격저장</a></td>' +
+                         '<td>' + apartment.rcntSellPrc + '('+apartment.rcntSellDt+')</td>' +
+                         '<td>' + apartment.rcntRentPrc + '('+apartment.rcntRentDt+')</td>' +
+                         '<td>' + apartment.nvrSellPrc + '('+apartment.nvrSellDt+')</td>' +
+                         '<td>' + apartment.nvrRentPrc + '('+apartment.nvrRentDt+')</td>' +
+                         '<td><a href="/reg/apt/prc?aptDtlId=' + apartment.aptDtlId + '">가격저장</a></td>' +
                          '</tr>';
 
                      $('#tbAptDtl tbody').append(row);

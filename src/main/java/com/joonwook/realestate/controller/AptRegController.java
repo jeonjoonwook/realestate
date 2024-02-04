@@ -2,6 +2,7 @@ package com.joonwook.realestate.controller;
 
 import com.joonwook.realestate.domain.Region;
 import com.joonwook.realestate.dto.AptDtlRegDto;
+import com.joonwook.realestate.dto.AptPrcRegDto;
 import com.joonwook.realestate.dto.AptRegDto;
 import com.joonwook.realestate.service.AptInfoService;
 import com.joonwook.realestate.service.AptRegService;
@@ -32,6 +33,12 @@ public class AptRegController {
         model.addAttribute("aptId", aptId);
         return "AptDtlReg"; }
 
+    @GetMapping("/reg/apt/prc")
+    public String regAptPrcInfo(@RequestParam(name = "aptDtlId") String aptDtlId , Model model) {
+        model.addAttribute("aptDtlId", aptDtlId);
+        return "AptPrcReg"; }
+
+
     @PostMapping("/save/apt")
     public @ResponseBody Map<String,String> saveApt(@RequestBody AptRegDto aptRegDto) {
         Map<String, String> response = new HashMap<>();
@@ -60,6 +67,26 @@ public class AptRegController {
 
         try{
             aptRegService.insertAptDtl(aptDtlRegDto);
+            response.put("status", "success");
+            response.put("message", "Apt saved successfully.");
+        }catch(Exception e){
+            System.out.println("saveApt error");
+            // 예외가 발생한 경우, 실패 상태를 response에 추가
+            response.put("status", "error");
+            response.put("message", "Failed to save Apt. " + e.getMessage());
+        }
+
+        return response;
+    }
+
+    @PostMapping("/save/apt/prc")
+    public @ResponseBody Map<String,String> saveAptPrc(@RequestBody AptPrcRegDto aptPrcRegDto) {
+        Map<String, String> response = new HashMap<>();
+        response.put("status", "success");
+        response.put("message", "Apt saved successfully.");
+
+        try{
+            aptRegService.insertAptPrc(aptPrcRegDto);
             response.put("status", "success");
             response.put("message", "Apt saved successfully.");
         }catch(Exception e){

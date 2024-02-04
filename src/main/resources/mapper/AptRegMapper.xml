@@ -74,4 +74,42 @@
             )
         ]]>
     </insert>
+
+    <insert id="insertAptPrc" parameterType="com.joonwook.realestate.dto.AptPrcRegDto" >
+        <![CDATA[
+            INSERT INTO APT_PRC (
+                HIST_STRT_DTS,
+                HIST_END_DTS,
+                APT_DTL_ID,
+                RCNT_SELL_PRC,
+                RCNT_SELL_DT,
+                RCNT_RENT_PRC,
+                RCNT_RENT_DT,
+                NVR_SELL_PRC,
+                NVR_SELL_DT,
+                NVR_RENT_PRC,
+                NVR_RENT_DT,
+                REG_DTS,
+                REGPE_ID,
+                MOD_DTS,
+                MODPE_ID
+            ) VALUES (
+                NOW(),
+                '9999-12-31 23:59:59',
+                #{aptDtlId},
+                #{rcntSellPrc},
+                #{rcntSellDt},
+                #{rcntRentPrc},
+                #{rcntRentDt},
+                #{nvrSellPrc},
+                #{nvrSellDt},
+                #{nvrRentPrc},
+                #{nvrRentDt},
+                NOW(),
+                'joonwook',
+                NOW(),
+                'joonwook'
+            )
+        ]]>
+    </insert>
 </mapper>

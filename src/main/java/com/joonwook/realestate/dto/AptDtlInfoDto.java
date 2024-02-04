@@ -26,10 +26,20 @@ public class AptDtlInfoDto {
     private String highSellDt;
     private String highRentPrc;
     private String highRentDt;
+    private String rcntSellPrc;
+    private String rcntSellDt;
+    private String rcntRentPrc;
+    private String rcntRentDt;
+    private String nvrSellPrc;
+    private String nvrSellDt;
+    private String nvrRentPrc;
+    private String nvrRentDt;
     private Date regDts;
     private String regpeId;
     private Date modDts;
     private String modpeId;
+
+
 
     public AptDtlInfoDto() {
     }
@@ -232,5 +242,69 @@ public class AptDtlInfoDto {
 
     public void setAptNm(String aptNm) {
         this.aptNm = aptNm;
+    }
+
+    public String getRcntSellPrc() {
+        return rcntSellPrc;
+    }
+
+    public void setRcntSellPrc(String rcntSellPrc) {
+        this.rcntSellPrc = rcntSellPrc;
+    }
+
+    public String getRcntSellDt() {
+        return rcntSellDt;
+    }
+
+    public void setRcntSellDt(String rcntSellDt) {
+        this.rcntSellDt = rcntSellDt;
+    }
+
+    public String getRcntRentPrc() {
+        return rcntRentPrc;
+    }
+
+    public void setRcntRentPrc(String rcntRentPrc) {
+        this.rcntRentPrc = rcntRentPrc;
+    }
+
+    public String getRcntRentDt() {
+        return rcntRentDt;
+    }
+
+    public void setRcntRentDt(String rcntRentDt) {
+        this.rcntRentDt = rcntRentDt;
+    }
+
+    public String getNvrSellPrc() {
+        return nvrSellPrc;
+    }
+
+    public void setNvrSellPrc(String nvrSellPrc) {
+        this.nvrSellPrc = nvrSellPrc;
+    }
+
+    public String getNvrSellDt() {
+        return nvrSellDt;
+    }
+
+    public void setNvrSellDt(String nvrSellDt) {
+        this.nvrSellDt = nvrSellDt;
+    }
+
+    public String getNvrRentPrc() {
+        return nvrRentPrc;
+    }
+
+    public void setNvrRentPrc(String nvrRentPrc) {
+        this.nvrRentPrc = nvrRentPrc;
+    }
+
+    public String getNvrRentDt() {
+        return nvrRentDt;
+    }
+
+    public void setNvrRentDt(String nvrRentDt) {
+        this.nvrRentDt = nvrRentDt;
     }
 }
