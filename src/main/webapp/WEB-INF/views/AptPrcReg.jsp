@@ -18,29 +18,18 @@
         <label for="aptDtlId">아파트상세Id:</label>
         <input type="text" id="aptDtlId" name="aptDtlId" value = "${aptDtlId}" required><br>
 
-        <label for="rcntSellPrc">최근매매실거래가:</label>
-        <input type="text" id="rcntSellPrc" name="rcntSellPrc" required><br>
-
-        <label for="rcntSellDt">최근매매일자:</label>
-        <input type="text" id="rcntSellDt" name="rcntSellDt" required><br>
-
-        <label for="rcntRentPrc">최근전세실거래가:</label>
-        <input type="text" id="rcntRentPrc" name="rcntRentPrc" required><br>
-
-        <label for="rcntRentDt">최근전세일자:</label>
-        <input type="text" id="rcntRentDt" name="rcntRentDt" required><br>
-
-        <label for="nvrSellPrc">네이버매매가:</label>
-        <input type="text" id="nvrSellPrc" name="nvrSellPrc" required><br>
-
-        <label for="nvrSellDt">네이버매매일자:</label>
-        <input type="text" id="nvrSellDt" name="nvrSellDt" required><br>
-
-        <label for="nvrRentPrc">네이버전세가:</label>
-        <input type="text" id="nvrRentPrc" name="nvrRentPrc" required><br>
-
-        <label for="nvrRentDt">네이버전세일자:</label>
-        <input type="text" id="nvrRentDt" name="nvrRentDt" required><br>
+        <label>가격유형:</label>
+        <input type="radio" name="prcTypeCd" value="10" checked> 실거래가
+        <input type="radio" name="prcTypeCd" value="20" > 호가
+        <br>
+        <label>거래유형:</label>
+        <input type="radio" name="dealTypeCd" value="10" checked> 매매
+        <input type="radio" name="dealTypeCd" value="20"> 전세
+        <br>
+        <label for="price">가격:</label>
+        <input type="text" id="price" name="price" required><br>
+        <label for="prcDt">일자:</label>
+        <input type="text" id="prcDt" name="prcDt" required><br>
 
         <input type="button" id="btnRegAptPrc" value="저장">
         <input type="button" id="btnMoveRtvAptDtl" onClick="location.href='/apt/dtl'" value="상세조회화면이동">

@@ -24,7 +24,7 @@ $(document).ready(function(){
                  for (var i = 0; i < response.length; i++) {
                      var apartment = response[i];
                      var row = '<tr>' +
-                         '<td>' + apartment.aptId + '</td>' +
+                         '<td class="aptIdCell" onclick="rtvAtpDtl(this)">' + apartment.aptId + '</td>' +
                          '<td>' + apartment.aptNm + '</td>' +
                          '<td>' + apartment.rgnCd + '</td>' +
                          '<td>' + apartment.rgnDtlCd + '</td>' +
@@ -71,3 +71,50 @@ $(document).ready(function(){
          });
      });
 });
+
+function rtvAtpDtl(element){
+     console.log('아파트 ID 클릭됨: ' + element.textContent);
+     // 아파트 ID 가져오기
+     var aptId = element.textContent;
+
+     var data = {
+        "aptId" : aptId
+     };
+
+     $.ajax({
+         type: "POST",
+         url: "/info/apt/dtl",
+         contentType: "application/json",
+         data: JSON.stringify(data),
+         dataType : "json",
+         success: function (response) {
+
+             // 성공 시 처리
+             $('#tbAptDtl tbody').empty();
+
+             // Loop through the retrieved data and append rows to the table
+             for (var i = 0; i < response.length; i++) {
+                 var apartment = response[i];
+                 var row = '<tr>' +
+                     '<td>' + apartment.aptId + '</td>' +
+                     '<td>' + apartment.aptDtlId + '</td>' +
+                     '<td>' + apartment.aptNm + '</td>' +
+                     '<td>' + apartment.rgnDtlCd + '</td>' +
+                     '<td>' + apartment.address + '</td>' +
+                     '<td>' + apartment.aptYear + '</td>' +
+                     '<td>' + apartment.unitAmt + '</td>' +
+                     '<td>' + apartment.plotRate + '</td>' +
+                     '<td>' + apartment.totArea + '/'+apartment.usblArea+'</td>' +
+                     '<td>' + apartment.roomAmt + '/'+apartment.toiletAmt+'</td>' +
+                     '<td>' + apartment.highSellPrc + '('+apartment.highSellDt+')</td>' +
+                     '<td>' + apartment.highRentPrc + '('+apartment.highRentDt+')</td>' +
+                     '</tr>';
+
+                 $('#tbAptDtl tbody').append(row);
+             }
+         },
+         error: function (error) {
+            alert("조회에 실패했습니다.");
+         }
+     });
+}

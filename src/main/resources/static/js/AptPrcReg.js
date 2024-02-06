@@ -1,25 +1,18 @@
 $(document).ready(function(){
     $("#btnRegAptPrc").click(function () {
          var aptDtlId = $("#aptDtlId").val();
-         var rcntSellPrc = $("#rcntSellPrc").val();
-         var rcntSellDt = $("#rcntSellDt").val();
-         var rcntRentPrc = $("#rcntRentPrc").val();
-         var rcntRentDt = $("#rcntRentDt").val();
-         var nvrSellPrc = $("#nvrSellPrc").val();
-         var nvrSellDt = $("#nvrSellDt").val();
-         var nvrRentPrc = $("#nvrRentPrc").val();
-         var nvrRentDt = $("#nvrRentDt").val();
+         var prcTypeCd = $('input[name="prcTypeCd"]:checked').val();
+         var dealTypeCd = $('input[name="dealTypeCd"]:checked').val();
+         var price = $("#price").val();
+         var prcDt = $("#prcDt").val();
+
 
          var data = {
              "aptDtlId": aptDtlId,
-             "rcntSellPrc": rcntSellPrc,
-             "rcntSellDt": rcntSellDt,
-             "rcntRentPrc": rcntRentPrc,
-             "rcntRentDt": rcntRentDt,
-             "nvrSellPrc": nvrSellPrc,
-             "nvrSellDt": nvrSellDt,
-             "nvrRentPrc": nvrRentPrc,
-             "nvrRentDt": nvrRentDt
+             "prcTypeCd": prcTypeCd,
+             "dealTypeCd": dealTypeCd,
+             "price": price,
+             "prcDt": prcDt
          };
 
          $.ajax({

@@ -43,27 +43,38 @@
             AD.HIGH_SELL_PRC as highSellPrc,
             AD.HIGH_SELL_DT as highSellDt,
             AD.HIGH_RENT_PRC as highRentPrc,
-            AD.HIGH_RENT_DT as highRentDt,
-            AP.RCNT_SELL_PRC as rcntSellPrc,
-            AP.RCNT_SELL_DT as rcntSellDt,
-            AP.RCNT_RENT_PRC as rcntRentPrc,
-            AP.RCNT_RENT_DT as rcntRentDt,
-            AP.NVR_SELL_PRC as nvrSellPrc,
-            AP.NVR_SELL_DT as nvrSellDt,
-            AP.NVR_RENT_PRC as nvrRentPrc,
-            AP.NVR_RENT_DT as nvrRentDt
+            AD.HIGH_RENT_DT as highRentDt
         FROM APT A
         INNER JOIN APT_DTL AD
         ON A.APT_ID = AD.APT_ID
-        LEFT JOIN APT_PRC AP
-        ON AD.APT_DTL_ID = AP.APT_DTL_ID
         WHERE 1=1
         AND A.APT_ID = AD.APT_ID
         AND A.HIST_END_DTS = '9999-12-31 23:59:59'
         AND AD.HIST_END_DTS = '9999-12-31 23:59:59'
-        AND AD.HIST_END_DTS = '9999-12-31 23:59:59'
-        AND (#{rgnCd} IS NULL OR RGN_CD = #{rgnCd})
-        AND (#{rgnDtlCd} IS NULL OR RGN_DTL_CD = #{rgnDtlCd} OR #{rgnDtlCd} = '')
+        AND (#{aptId} IS NULL OR A.APT_ID = #{aptId})
+        AND (#{rgnCd} IS NULL OR A.RGN_CD = #{rgnCd})
+        AND (#{rgnDtlCd} IS NULL OR A.RGN_DTL_CD = #{rgnDtlCd} OR #{rgnDtlCd} = '')
+    </select>
+
+    <select id="selectAptPrcInfo" parameterType="com.joonwook.realestate.dto.AptPrcInfoDto" resultType="com.joonwook.realestate.dto.AptPrcInfoDto">
+        SELECT
+            APT_DEAL_ID as aptDealId,
+            HIST_STRT_DTS as histStrtDts,
+            HIST_END_DTS as histEndDts,
+            APT_DTL_ID as aptDtlId,
+            PRC_TYPE_CD as prcTypeCd,
+            DEAL_TYPE_CD as dealTypeCd,
+            PRICE as price,
+            PRC_DT as prcDt,
+            REG_DTS as regDts,
+            REGPE_ID as regpeId,
+            MOD_DTS as modDts,
+            MODPE_ID as modpeId
+            FROM APT_PRC
+        WHERE 1=1
+        AND APT_DTL_ID = #{aptDtlId}
+        AND PRC_TYPE_CD = #{prcTypeCd}
+        AND DEAL_TYPE_CD = #{dealTypeCd}
     </select>
 
     <select id="selectRegionInfo" resultType="com.joonwook.realestate.domain.Region">

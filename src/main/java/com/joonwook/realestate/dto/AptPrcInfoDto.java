@@ -2,7 +2,7 @@ package com.joonwook.realestate.dto;
 
 import java.util.Date;
 
-public class AptPrcRegDto {
+public class AptPrcInfoDto {
 
     private Date histStrtDts;
     private Date histEndDts;
@@ -15,7 +15,9 @@ public class AptPrcRegDto {
     private String regpeId;
     private Date modDts;
     private String modpeId;
-    public AptPrcRegDto() {
+
+    public AptPrcInfoDto() {
+
     }
 
     public Date getHistStrtDts() {
@@ -105,5 +107,4 @@ public class AptPrcRegDto {
     public void setModpeId(String modpeId) {
         this.modpeId = modpeId;
     }
-
 }
