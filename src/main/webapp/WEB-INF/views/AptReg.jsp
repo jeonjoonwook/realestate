@@ -39,6 +39,9 @@
         <label for="plotRate">용적률:</label>
         <input type="text" id="plotRate" name="plotRate" required><br>
 
+        <label for="aptDesc">기타상세:</label>
+        <input type="text" id="aptDesc" name="aptDesc" required><br>
+
         <input type="button" id="btnRegApt" value="저장">
         <input type="button" id="btnMoveRtvApt" onClick="location.href='/apt'" value="조회화면이동">
     </div>

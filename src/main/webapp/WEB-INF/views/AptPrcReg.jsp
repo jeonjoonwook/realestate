@@ -31,6 +31,9 @@
         <label for="prcDt">일자:</label>
         <input type="text" id="prcDt" name="prcDt" required><br>
 
+        <label for="aptPrcDesc">기타상세:</label>
+        <input type="text" id="aptPrcDesc" name="aptPrcDesc" required><br>
+
         <input type="button" id="btnRegAptPrc" value="저장">
         <input type="button" id="btnMoveRtvAptDtl" onClick="location.href='/apt/dtl'" value="상세조회화면이동">
     </div>

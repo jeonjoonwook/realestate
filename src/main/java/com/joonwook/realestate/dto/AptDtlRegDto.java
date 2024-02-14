@@ -15,6 +15,7 @@ public class AptDtlRegDto {
     private String highSellDt;
     private String highRentPrc;
     private String highRentDt;
+    private String aptDtlDesc;
     private Date regDts;
     private String regpeId;
     private Date modDts;
@@ -143,4 +144,11 @@ public class AptDtlRegDto {
         this.modpeId = modpeId;
     }
 
+    public String getAptDtlDesc() {
+        return aptDtlDesc;
+    }
+
+    public void setAptDtlDesc(String aptDtlDesc) {
+        this.aptDtlDesc = aptDtlDesc;
+    }
 }

@@ -13,10 +13,12 @@ public class AptRegDto {
     private int aptYear;
     private String unitAmt;
     private String plotRate;
+    private String aptDesc;
     private Date regDts;
     private String regpeId;
     private Date modDts;
     private String modpeId;
+
 
     public AptRegDto() {
     }
@@ -125,4 +127,11 @@ public class AptRegDto {
         this.modpeId = modpeId;
     }
 
+    public String getAptDesc() {
+        return aptDesc;
+    }
+
+    public void setAptDesc(String aptDesc) {
+        this.aptDesc = aptDesc;
+    }
 }

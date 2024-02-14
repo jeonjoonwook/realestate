@@ -9,6 +9,7 @@ $(document).ready(function(){
          var highSellDt = $("#highSellDt").val();
          var highRentPrc = $("#highRentPrc").val();
          var highRentDt = $("#highRentDt").val();
+         var aptDtlDesc = $("#aptDtlDesc").val();
 
          var data = {
              "aptId": aptId,
@@ -19,7 +20,8 @@ $(document).ready(function(){
              "highSellPrc": highSellPrc,
              "highSellDt": highSellDt,
              "highRentPrc": highRentPrc,
-             "highRentDt": highRentDt
+             "highRentDt": highRentDt,
+             "aptDtlDesc": aptDtlDesc
          };
 
          $.ajax({

@@ -7,6 +7,7 @@ $(document).ready(function(){
          var aptYear = $("#aptYear").val();
          var unitAmt = $("#unitAmt").val();
          var plotRate = $("#plotRate").val();
+         var aptDesc = $("#aptDesc").val();
 
          var data = {
              "aptNm": aptNm,
@@ -15,7 +16,8 @@ $(document).ready(function(){
              "address": address,
              "aptYear": aptYear,
              "unitAmt": unitAmt,
-             "plotRate": plotRate
+             "plotRate": plotRate,
+             "aptDesc": aptDesc
          };
 
          $.ajax({

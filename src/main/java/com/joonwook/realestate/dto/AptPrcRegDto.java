@@ -11,6 +11,7 @@ public class AptPrcRegDto {
     private String dealTypeCd;
     private String price;
     private String prcDt;
+    private String aptPrcDesc;
     private Date regDts;
     private String regpeId;
     private Date modDts;
@@ -106,4 +107,11 @@ public class AptPrcRegDto {
         this.modpeId = modpeId;
     }
 
+    public String getAptPrcDesc() {
+        return aptPrcDesc;
+    }
+
+    public void setAptPrcDesc(String aptPrcDesc) {
+        this.aptPrcDesc = aptPrcDesc;
+    }
 }

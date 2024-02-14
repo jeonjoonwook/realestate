@@ -5,6 +5,7 @@ $(document).ready(function(){
          var dealTypeCd = $('input[name="dealTypeCd"]:checked').val();
          var price = $("#price").val();
          var prcDt = $("#prcDt").val();
+         var aptPrcDesc = $("#aptPrcDesc").val();
 
 
          var data = {
@@ -12,7 +13,8 @@ $(document).ready(function(){
              "prcTypeCd": prcTypeCd,
              "dealTypeCd": dealTypeCd,
              "price": price,
-             "prcDt": prcDt
+             "prcDt": prcDt,
+             "aptPrcDesc": aptPrcDesc
          };
 
          $.ajax({

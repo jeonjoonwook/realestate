@@ -43,12 +43,39 @@
             AD.HIGH_SELL_PRC as highSellPrc,
             AD.HIGH_SELL_DT as highSellDt,
             AD.HIGH_RENT_PRC as highRentPrc,
-            AD.HIGH_RENT_DT as highRentDt
+            AD.HIGH_RENT_DT as highRentDt,
+            RSP.PRICE as rcntSellPrc,
+            RSP.PRC_DT as rcntSellDt,
+            RRP.PRICE as rcntRentPrc,
+            RRP.PRC_DT as rcntRentDt,
+            NSP.PRICE as nvrSellPrc,
+            NSP.PRC_DT as nvrSellDt,
+            NRP.PRICE as nvrRentPrc,
+            NRP.PRC_DT as nvrRentDt
         FROM APT A
         INNER JOIN APT_DTL AD
-        ON A.APT_ID = AD.APT_ID
+            ON A.APT_ID = AD.APT_ID
+        LEFT JOIN APT_PRC RSP
+            ON AD.APT_DTL_ID = RSP.APT_DTL_ID
+            AND RSP.PRC_TYPE_CD = '10'
+            AND RSP.DEAL_TYPE_CD = '10'
+            AND RSP.HIST_END_DTS = '9999-12-31 23:59:59'
+        LEFT JOIN APT_PRC RRP
+            ON AD.APT_DTL_ID = RRP.APT_DTL_ID
+            AND RRP.PRC_TYPE_CD = '10'
+            AND RRP.DEAL_TYPE_CD = '20'
+            AND RRP.HIST_END_DTS = '9999-12-31 23:59:59'
+        LEFT JOIN APT_PRC NSP
+            ON AD.APT_DTL_ID = NSP.APT_DTL_ID
+            AND NSP.PRC_TYPE_CD = '20'
+            AND NSP.DEAL_TYPE_CD = '10'
+            AND NSP.HIST_END_DTS = '9999-12-31 23:59:59'
+        LEFT JOIN APT_PRC NRP
+            ON AD.APT_DTL_ID = NRP.APT_DTL_ID
+            AND NRP.PRC_TYPE_CD = '20'
+            AND NRP.DEAL_TYPE_CD = '20'
+            AND NRP.HIST_END_DTS = '9999-12-31 23:59:59'
         WHERE 1=1
-        AND A.APT_ID = AD.APT_ID
         AND A.HIST_END_DTS = '9999-12-31 23:59:59'
         AND AD.HIST_END_DTS = '9999-12-31 23:59:59'
         AND (#{aptId} IS NULL OR A.APT_ID = #{aptId})

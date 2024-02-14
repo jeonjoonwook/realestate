@@ -42,6 +42,8 @@
         <label for="highRentDt">전세최고일자:</label>
         <input type="text" id="highRentDt" name="highRentDt" required><br>
 
+        <label for="aptDtlDesc">기타상세:</label>
+        <input type="text" id="aptDtlDesc" name="aptDtlDesc" required><br>
 
         <input type="button" id="btnRegAptDtl" value="저장">
         <input type="button" id="btnMoveRtvApt" onClick="location.href='/apt'" value="조회화면이동">
