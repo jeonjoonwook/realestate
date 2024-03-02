@@ -17,6 +17,10 @@ public class AptInfoController {
     @Autowired
     AptInfoService aptInfoService;
 
+    @GetMapping("/apt/test")
+    public String getAptInfoTest(Model model) {
+        return "AptInfo"; }
+
     @GetMapping("/apt")
     public String getAptInfo(Model model) {
         List<Region> regions = aptInfoService.getRegionInfo();
