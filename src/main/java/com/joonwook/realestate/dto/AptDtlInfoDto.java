@@ -23,9 +23,9 @@ public class AptDtlInfoDto {
     private String roomAmt;
     private String toiletAmt;
     private String highSellPrc;
-    private String highSellDt;
+    private String lowSellPrc;
     private String highRentPrc;
-    private String highRentDt;
+    private String lowRentPrc;
     private String rcntSellPrc;
     private String rcntSellDt;
     private String rcntRentPrc;
@@ -108,12 +108,12 @@ public class AptDtlInfoDto {
         this.highSellPrc = highSellPrc;
     }
 
-    public String getHighSellDt() {
-        return highSellDt;
+    public String getlowSellPrc() {
+        return lowSellPrc;
     }
 
-    public void setHighSellDt(String highSellDt) {
-        this.highSellDt = highSellDt;
+    public void setlowSellPrc(String lowSellPrc) {
+        this.lowSellPrc = lowSellPrc;
     }
 
     public String getHighRentPrc() {
@@ -124,12 +124,12 @@ public class AptDtlInfoDto {
         this.highRentPrc = highRentPrc;
     }
 
-    public String getHighRentDt() {
-        return highRentDt;
+    public String getlowRentPrc() {
+        return lowRentPrc;
     }
 
-    public void setHighRentDt(String highRentDt) {
-        this.highRentDt = highRentDt;
+    public void setlowRentPrc(String lowRentPrc) {
+        this.lowRentPrc = lowRentPrc;
     }
 
     public Date getRegDts() {

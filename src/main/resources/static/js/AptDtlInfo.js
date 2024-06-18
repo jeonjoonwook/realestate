@@ -34,8 +34,8 @@ $(document).ready(function(){
                          '<td>' + apartment.plotRate + '</td>' +
                          '<td>' + apartment.totArea + '/'+apartment.usblArea+'</td>' +
                          '<td>' + apartment.roomAmt + '/'+apartment.toiletAmt+'</td>' +
-                         '<td>' + apartment.highSellPrc + '('+apartment.highSellDt+')</td>' +
-                         '<td>' + apartment.highRentPrc + '('+apartment.highRentDt+')</td>' +
+                         '<td>' + apartment.highSellPrc + '('+apartment.lowSellPrc+')</td>' +
+                         '<td>' + apartment.highRentPrc + '('+apartment.lowRentPrc+')</td>' +
                          '<td>' + apartment.rcntSellPrc + '('+apartment.rcntSellDt+')</td>' +
                          '<td>' + apartment.rcntRentPrc + '('+apartment.rcntRentDt+')</td>' +
                          '<td>' + apartment.nvrSellPrc + '('+apartment.nvrSellDt+')</td>' +

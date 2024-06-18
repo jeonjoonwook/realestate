@@ -106,8 +106,8 @@ function rtvAtpDtl(element){
                      '<td>' + apartment.plotRate + '</td>' +
                      '<td>' + apartment.totArea + '/'+apartment.usblArea+'</td>' +
                      '<td>' + apartment.roomAmt + '/'+apartment.toiletAmt+'</td>' +
-                     '<td>' + apartment.highSellPrc + '('+apartment.highSellDt+')</td>' +
-                     '<td>' + apartment.highRentPrc + '('+apartment.highRentDt+')</td>' +
+                     '<td>' + apartment.highSellPrc + '('+apartment.lowSellPrc+')</td>' +
+                     '<td>' + apartment.highRentPrc + '('+apartment.lowRentPrc+')</td>' +
                      '</tr>';
 
                  $('#tbAptDtl tbody').append(row);

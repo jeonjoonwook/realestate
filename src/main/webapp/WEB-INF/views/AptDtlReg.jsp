@@ -33,14 +33,14 @@
         <label for="highSellPrc">매매최고가:</label>
         <input type="text" id="highSellPrc" name="highSellPrc" required><br>
 
-        <label for="highSellDt">매매최고일자:</label>
-        <input type="text" id="highSellDt" name="highSellDt" required><br>
+        <label for="lowSellPrc">매매전저가:</label>
+        <input type="text" id="lowSellPrc" name="lowSellPrc" required><br>
 
         <label for="highRentPrc">전세최고가:</label>
         <input type="text" id="highRentPrc" name="highRentPrc" required><br>
 
-        <label for="highRentDt">전세최고일자:</label>
-        <input type="text" id="highRentDt" name="highRentDt" required><br>
+        <label for="lowRentPrc">전세전저가:</label>
+        <input type="text" id="lowRentPrc" name="lowRentPrc" required><br>
 
         <label for="aptDtlDesc">기타상세:</label>
         <input type="text" id="aptDtlDesc" name="aptDtlDesc" required><br>

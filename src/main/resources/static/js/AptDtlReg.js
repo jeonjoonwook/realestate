@@ -6,9 +6,9 @@ $(document).ready(function(){
          var roomAmt = $("#roomAmt").val();
          var toiletAmt = $("#toiletAmt").val();
          var highSellPrc = $("#highSellPrc").val();
-         var highSellDt = $("#highSellDt").val();
+         var lowSellPrc = $("#lowSellPrc").val();
          var highRentPrc = $("#highRentPrc").val();
-         var highRentDt = $("#highRentDt").val();
+         var lowRentPrc = $("#lowRentPrc").val();
          var aptDtlDesc = $("#aptDtlDesc").val();
 
          var data = {
@@ -18,9 +18,9 @@ $(document).ready(function(){
              "roomAmt": roomAmt,
              "toiletAmt": toiletAmt,
              "highSellPrc": highSellPrc,
-             "highSellDt": highSellDt,
+             "lowSellPrc": lowSellPrc,
              "highRentPrc": highRentPrc,
-             "highRentDt": highRentDt,
+             "lowRentPrc": lowRentPrc,
              "aptDtlDesc": aptDtlDesc
          };
 
