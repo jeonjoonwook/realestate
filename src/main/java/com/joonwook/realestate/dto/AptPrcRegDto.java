@@ -11,6 +11,7 @@ public class AptPrcRegDto {
     private String dealTypeCd;
     private String price;
     private String prcDt;
+    private String floor;
     private String aptPrcDesc;
     private Date regDts;
     private String regpeId;
@@ -57,6 +58,14 @@ public class AptPrcRegDto {
 
     public void setDealTypeCd(String dealTypeCd) {
         this.dealTypeCd = dealTypeCd;
+    }
+
+    public String getFloor() {
+        return floor;
+    }
+
+    public void setFloor(String floor) {
+        this.floor = floor;
     }
 
     public String getPrice() {

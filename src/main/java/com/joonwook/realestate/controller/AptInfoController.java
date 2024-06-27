@@ -40,7 +40,6 @@ public class AptInfoController {
 
     @PostMapping("/info/apt/dtl")
     public @ResponseBody List<AptDtlInfoDto> rtvAptDtlInfo(@RequestBody AptDtlInfoDto aptDtlInfoDto) {
-
         List<AptDtlInfoDto> aptList =  aptInfoService.getAptDtlInfo(aptDtlInfoDto);
         return aptList; }
 

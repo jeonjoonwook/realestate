@@ -34,12 +34,12 @@ $(document).ready(function(){
                          '<td>' + apartment.plotRate + '</td>' +
                          '<td>' + apartment.totArea + '/'+apartment.usblArea+'</td>' +
                          '<td>' + apartment.roomAmt + '/'+apartment.toiletAmt+'</td>' +
-                         '<td>' + apartment.highSellPrc + '('+apartment.lowSellPrc+')</td>' +
-                         '<td>' + apartment.highRentPrc + '('+apartment.lowRentPrc+')</td>' +
-                         '<td>' + apartment.rcntSellPrc + '('+apartment.rcntSellDt+')</td>' +
-                         '<td>' + apartment.rcntRentPrc + '('+apartment.rcntRentDt+')</td>' +
-                         '<td>' + apartment.nvrSellPrc + '('+apartment.nvrSellDt+')</td>' +
-                         '<td>' + apartment.nvrRentPrc + '('+apartment.nvrRentDt+')</td>' +
+                         '<td>' + apartment.highSellPrc + '/'+apartment.lowSellPrc+'</td>' +
+                         '<td>' + apartment.highRentPrc + '/'+apartment.lowRentPrc+'</td>' +
+                         '<td>' + apartment.rcntSellPrc + '('+apartment.rcntSellDt+')('+apartment.rcntSellFlr+'층)</td>' +
+                         '<td>' + apartment.rcntRentPrc + '('+apartment.rcntRentDt+')('+apartment.rcntRentFlr+'층)</td>' +
+                         '<td>' + apartment.nvrSellPrc + '('+apartment.nvrSellDt+')('+apartment.nvrSellFlr+'층)</td>' +
+                         '<td>' + apartment.nvrRentPrc + '('+apartment.nvrRentDt+')('+apartment.nvrRentFlr+'층)</td>' +
                          '<td><a href="/reg/apt/prc?aptDtlId=' + apartment.aptDtlId + '">가격저장</a></td>' +
                          '</tr>';
 

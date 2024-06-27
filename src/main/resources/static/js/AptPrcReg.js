@@ -3,6 +3,7 @@ $(document).ready(function(){
          var aptDtlId = $("#aptDtlId").val();
          var prcTypeCd = $('input[name="prcTypeCd"]:checked').val();
          var dealTypeCd = $('input[name="dealTypeCd"]:checked').val();
+         var floor = $("#floor").val();
          var price = $("#price").val();
          var prcDt = $("#prcDt").val();
          var aptPrcDesc = $("#aptPrcDesc").val();
@@ -12,6 +13,7 @@ $(document).ready(function(){
              "aptDtlId": aptDtlId,
              "prcTypeCd": prcTypeCd,
              "dealTypeCd": dealTypeCd,
+             "floor": floor,
              "price": price,
              "prcDt": prcDt,
              "aptPrcDesc": aptPrcDesc

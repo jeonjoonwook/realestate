@@ -21,6 +21,7 @@
     </select>
     <select id="rgnDtlCd"></select>
     <input type="button" id="btnRtvAptDtl" value="조회">
+    <input type="button" id="btnMoveRegApt" onClick="location.href='/apt'" value="아파트기본정보화면이동">
     <table border="1" id = "tbAptDtl">
         <thead>
             <th>아파트ID</th>
@@ -33,8 +34,8 @@
             <th>용적률</th>
             <th>공급면적/전용면적</th>
             <th>방수/화장실수</th>
-            <th>매매최고가</th>
-            <th>전세최고가</th>
+            <th>매매최고가/매매전저가</th>
+            <th>전세최고가/전세전저가</th>
             <th>최근매매실거래</th>
             <th>최근전세실거래</th>
             <th>최근매매최저호가</th>

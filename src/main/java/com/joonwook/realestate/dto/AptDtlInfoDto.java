@@ -28,12 +28,16 @@ public class AptDtlInfoDto {
     private String lowRentPrc;
     private String rcntSellPrc;
     private String rcntSellDt;
+    private String rcntSellFlr;
     private String rcntRentPrc;
     private String rcntRentDt;
+    private String rcntRentFlr;
     private String nvrSellPrc;
     private String nvrSellDt;
+    private String nvrSellFlr;
     private String nvrRentPrc;
     private String nvrRentDt;
+    private String nvrRentFlr;
     private Date regDts;
     private String regpeId;
     private Date modDts;
@@ -306,5 +310,37 @@ public class AptDtlInfoDto {
 
     public void setNvrRentDt(String nvrRentDt) {
         this.nvrRentDt = nvrRentDt;
+    }
+
+    public String getRcntSellFlr() {
+        return rcntSellFlr;
+    }
+
+    public void setRcntSellFlr(String rcntSellFlr) {
+        this.rcntSellFlr = rcntSellFlr;
+    }
+
+    public String getRcntRentFlr() {
+        return rcntRentFlr;
+    }
+
+    public void setRcntRentFlr(String rcntRentFlr) {
+        this.rcntRentFlr = rcntRentFlr;
+    }
+
+    public String getNvrSellFlr() {
+        return nvrSellFlr;
+    }
+
+    public void setNvrSellFlr(String nvrSellFlr) {
+        this.nvrSellFlr = nvrSellFlr;
+    }
+
+    public String getNvrRentFlr() {
+        return nvrRentFlr;
+    }
+
+    public void setNvrRentFlr(String nvrRentFlr) {
+        this.nvrRentFlr = nvrRentFlr;
     }
 }

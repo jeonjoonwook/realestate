@@ -26,6 +26,8 @@
         <input type="radio" name="dealTypeCd" value="10" checked> 매매
         <input type="radio" name="dealTypeCd" value="20"> 전세
         <br>
+        <label for="price">층수:</label>
+        <input type="text" id="floor" name="floor" required><br>
         <label for="price">가격:</label>
         <input type="text" id="price" name="price" required><br>
         <label for="prcDt">일자:</label>

@@ -46,12 +46,16 @@
             AD.LOW_RENT_PRC as lowRentPrc,
             RSP.PRICE as rcntSellPrc,
             RSP.PRC_DT as rcntSellDt,
+            RSP.FLOOR as rcntSellFlr,
             RRP.PRICE as rcntRentPrc,
             RRP.PRC_DT as rcntRentDt,
+            RRP.FLOOR as rcntRentFlr,
             NSP.PRICE as nvrSellPrc,
             NSP.PRC_DT as nvrSellDt,
+            NSP.FLOOR as nvrSellFlr,
             NRP.PRICE as nvrRentPrc,
-            NRP.PRC_DT as nvrRentDt
+            NRP.PRC_DT as nvrRentDt,
+            NRP.FLOOR as nvrRentFlr
         FROM APT A
         INNER JOIN APT_DTL AD
             ON A.APT_ID = AD.APT_ID
@@ -93,6 +97,7 @@
             DEAL_TYPE_CD as dealTypeCd,
             PRICE as price,
             PRC_DT as prcDt,
+            FLOOR as floor,
             REG_DTS as regDts,
             REGPE_ID as regpeId,
             MOD_DTS as modDts,
